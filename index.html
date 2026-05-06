@@ -110,7 +110,6 @@
       border-bottom: 1px solid rgba(176, 112, 128, 0.2);
       font-size: 11px;
       letter-spacing: 2.5px;
-      text-transform: uppercase;
       color: var(--old-rose);
     }
 
@@ -195,8 +194,10 @@
       }
 
       .nav-logo {
-        font-family: 'Great Vibes', cursive;
-        font-size: 22px;
+        font-family: 'Cormorant Garamond', serif;
+        font-style: italic;
+        font-weight: 500;
+        font-size: 20px;
         color: var(--old-rose);
         letter-spacing: 1px;
         text-transform: none;
@@ -310,9 +311,9 @@
     }
 
     .hero-hashtag {
-      font-size: 11px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
+      font-family: 'Great Vibes', cursive;
+      font-size: 22px;
+      letter-spacing: 1px;
       color: var(--old-rose);
       opacity: 0.8;
       margin-bottom: 20px;
@@ -1051,75 +1052,35 @@
       background: linear-gradient(160deg, #fffaf8 0%, #fef0f4 100%);
     }
 
-    .sponsors-card {
-      max-width: 640px;
-      margin: 0 auto;
-      background: linear-gradient(160deg, #fffaf8 0%, #fff4f7 100%);
-      border: 1px solid rgba(176, 112, 128, 0.22);
-      border-radius: 6px;
-      padding: 36px 32px;
-      box-shadow: 0 6px 36px rgba(176, 112, 128, 0.13),
-                  inset 0 1px 0 rgba(255,255,255,0.8);
-      position: relative;
-    }
-
-    .sponsors-card::before {
-      content: '';
-      position: absolute;
-      inset: 10px;
-      border: 1px dashed rgba(176, 112, 128, 0.2);
-      border-radius: 4px;
-      pointer-events: none;
-    }
-
-    .sponsors-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-    }
-
-    .sponsor-pair {
+    .sponsors-list {
       display: grid;
-      grid-template-columns: 1fr auto 1fr;
-      align-items: center;
-      padding: 18px 24px;
-      border-bottom: 1px solid rgba(176, 112, 128, 0.12);
-      gap: 12px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
     }
 
-    .sponsor-pair:last-child {
-      border-bottom: none;
+    .sponsor-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 18px;
+      background: linear-gradient(135deg, #fff0f3, #fce4ec);
+      border: 1px solid rgba(176, 112, 128, 0.15);
+      border-radius: 4px;
     }
 
-    .sponsor-name-him {
+    .sponsor-num {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 16px;
-      font-weight: 400;
-      color: var(--text);
-      line-height: 1.4;
-      text-align: right;
-    }
-
-    .sponsor-heart {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 16px;
+      font-size: 28px;
       color: var(--blush);
-      text-align: center;
+      line-height: 1;
       flex-shrink: 0;
     }
 
-    .sponsor-name-her {
+    .sponsor-names {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 16px;
+      font-size: 15px;
       color: var(--text);
-      line-height: 1.4;
-      text-align: left;
-    }
-
-    @media (max-width: 520px) {
-      .sponsors-card { padding: 28px 16px; }
-      .sponsor-pair { padding: 16px 10px; }
-      .sponsor-name-him, .sponsor-name-her { font-size: 13px; }
+      line-height: 1.5;
     }
 
     /* ── DRESS CODE ── */
@@ -2242,7 +2203,7 @@
 
   <!-- Navigation -->
   <nav>
-    <span class="nav-logo">Drix & Kris</span>
+    <span class="nav-logo">#KayDRIXnakalaansiKRIS</span>
     <div class="nav-links" id="nav-links">
       <a href="#hero" class="nav-link-item">Home</a>
       <a href="#countdown-section" class="nav-link-item">Countdown</a>
@@ -2414,10 +2375,45 @@
       }
       .music-title { font-size: 13px; }
     }
+
+    /* ── HERO SLIDESHOW ── */
+    .hero-slides {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    .hero-slide {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+      animation: heroFade 20s infinite;
+    }
+
+    .hero-slide:nth-child(1) { animation-delay: 0s; }
+    .hero-slide:nth-child(2) { animation-delay: 5s; }
+    .hero-slide:nth-child(3) { animation-delay: 10s; }
+    .hero-slide:nth-child(4) { animation-delay: 15s; }
+
+    @keyframes heroFade {
+      0%   { opacity: 0; }
+      5%   { opacity: 0.55; }
+      25%  { opacity: 0.55; }
+      30%  { opacity: 0; }
+      100% { opacity: 0; }
+    }
   </style>
 
   <!-- Hero -->
   <section id="hero">
+    <div class="hero-slides">
+      <div class="hero-slide" style="background-image: url('h1.jpg')"></div>
+      <div class="hero-slide" style="background-image: url('h2.jpg')"></div>
+      <div class="hero-slide" style="background-image: url('h3.jpg')"></div>
+      <div class="hero-slide" style="background-image: url('h4.jpg')"></div>
+    </div>
     <div class="hero-decor hero-decor-1"></div>
     <div class="hero-decor hero-decor-2"></div>
     <div class="hero-decor hero-decor-3"></div>
@@ -2432,8 +2428,9 @@
 
     <div class="hero-divider"></div>
 
-    <p class="hero-tagline">Two souls, one forever beginning</p>
-    <p class="hero-nickname">Drix & Kris</p>
+    <p class="hero-tagline">“Bahay at mga kayamanan ay minamana sa mga magulang: ngunit ang mabait na asawa ay galing sa Panginoon.”<br>
+      – Kawikaan 19:14</p>
+   
 
     <p class="hero-date">June 26 &nbsp;·&nbsp; 2026</p>
 
@@ -2516,13 +2513,11 @@
         <div class="venue-card">
           <div class="venue-card-side">
             <span class="venue-side-num">01</span>
-            <span class="venue-side-label">The Ceremony</span>
-            <span class="venue-side-type">Holy Matrimony</span>
+            <span class="venue-side-type">The Ceremony</span>
           </div>
           <div class="venue-card-body">
             <div class="venue-body-top">
-              <p class="venue-label-row">The Ceremony &nbsp;·&nbsp; No. 01</p>
-              <h3 class="venue-name">Holy Matrimony</h3>
+              <h3 class="venue-name">The Ceremony</h3>
               <p class="venue-address">
                 Iglesia ni Cristo lokal ng Pasong Langka<br>
                 Purok 3, Barangay Pasong Langka, Silang, Cavite
@@ -2563,7 +2558,7 @@
           </div>
           <div class="venue-card-body">
             <div class="venue-body-top">
-              <p class="venue-label-row">The Reception &nbsp;·&nbsp; No. 02</p>
+              <p class="venue-label-row">The Reception</p>
               <h3 class="venue-name">Grandeur Palace Co.</h3>
               <p class="venue-address">
                 Tagaytay-Sta. Rosa Road<br>
@@ -2679,7 +2674,8 @@
         <p class="dresscode-ornament">✦ &nbsp; ✦ &nbsp; ✦</p>
 
         <span class="dresscode-attire-badge">Attire</span>
-        <p class="dresscode-attire-title">Elegant Sunday / Church Dress</p>
+        <span class="dresscode-attire-badge">Elegant Sunday</span>
+        <p class="dresscode-attire-title">Semi Formal / Church Dress</p>
 
         <div class="colors-row">
           <div class="color-swatch">
@@ -2763,10 +2759,10 @@
         <div class="entourage-card">
           <p class="entourage-role">💐 Bridesmaids</p>
           <ul class="entourage-list">
-            <li><span class="num">4.</span>Yepes, Heart</li>
+            <li><span class="num">1.</span>Yepes, Heart</li>
             <li><span class="num">2.</span>De Vera, Ralyn</li>
-            <li><span class="num">1.</span>Cayetano, Janelyn</li>
-            <li><span class="num">3.</span>Baliuag, Crisnielyn</li>
+            <li><span class="num">3.</span>Cayetano, Janelyn</li>
+            <li><span class="num">4.</span>Baliuag, Crisnielyn</li>
             <li><span class="num">5.</span>Casignia, Jhaneana Krizel</li>
             <li><span class="num">6.</span>Apatan, Rizel Jane</li>
             <li><span class="num">7.</span>Nollas, Jacylyn</li>
@@ -2775,10 +2771,10 @@
         <div class="entourage-card">
           <p class="entourage-role">🤵 Groomsmen</p>
           <ul class="entourage-list">
-            <li><span class="num">4.</span>De Los Santos, Peewee</li>
+            <li><span class="num">1.</span>De Los Santos, Peewee</li>
             <li><span class="num">2.</span>De Los Santos, Stephen</li>
-            <li><span class="num">1.</span>Maines, Francis</li>
-            <li><span class="num">3.</span>Baliuag, Jei-em</li>
+            <li><span class="num">3.</span>Maines, Francis</li>
+            <li><span class="num">4.</span>Baliuag, Jei-em</li>
             <li><span class="num">5.</span>De Los Santos, Patrick</li>
             <li><span class="num">6.</span>Casundo, Ferdinand</li>
             <li><span class="num">7.</span>Ocson, Eugene</li>
@@ -2808,39 +2804,26 @@
       <h2 class="section-title">Principal Sponsors</h2>
       <div class="section-divider"></div>
 
-      <div class="sponsors-card">
-        <div class="sponsors-grid">
-
-          <div class="sponsor-pair">
-            <span class="sponsor-name-him">Ministro Ka Christian Gumabon</span>
-            <span class="sponsor-heart">&amp;</span>
-            <span class="sponsor-name-her">Ka Gloria Casas</span>
-          </div>
-
-          <div class="sponsor-pair">
-            <span class="sponsor-name-him">Ministro Ka Anthony Perez</span>
-            <span class="sponsor-heart">&amp;</span>
-            <span class="sponsor-name-her">Ka Flordeliza Gatchalian</span>
-          </div>
-
-          <div class="sponsor-pair">
-            <span class="sponsor-name-him">Ka Edwin Gatdula</span>
-            <span class="sponsor-heart">&amp;</span>
-            <span class="sponsor-name-her">Ka Rodelia Gatdula</span>
-          </div>
-
-          <div class="sponsor-pair">
-            <span class="sponsor-name-him">Ka Dante Anunciacion</span>
-            <span class="sponsor-heart">&amp;</span>
-            <span class="sponsor-name-her">Ka Luzviminda Orozco</span>
-          </div>
-
-          <div class="sponsor-pair">
-            <span class="sponsor-name-him">Ka Reden Caisido</span>
-            <span class="sponsor-heart">&amp;</span>
-            <span class="sponsor-name-her">Ka Merlyn Alvaro</span>
-          </div>
-
+      <div class="sponsors-list">
+        <div class="sponsor-item">
+          <span class="sponsor-num">1</span>
+          <span class="sponsor-names">Ministro Ka Christian Gumabon<br>&amp; Ka Gloria Casas</span>
+        </div>
+        <div class="sponsor-item">
+          <span class="sponsor-num">2</span>
+          <span class="sponsor-names">Ka Anthony Perez<br>&amp; Ka Flordeliza Gatchalian</span>
+        </div>
+        <div class="sponsor-item">
+          <span class="sponsor-num">3</span>
+          <span class="sponsor-names">Ka Edwin Gatdula<br>&amp; Ka Rodelia Gatdula</span>
+        </div>
+        <div class="sponsor-item">
+          <span class="sponsor-num">4</span>
+          <span class="sponsor-names">Ka Dante Anunciacion<br>&amp; Ka Luzviminda Orozco</span>
+        </div>
+        <div class="sponsor-item">
+          <span class="sponsor-num">5</span>
+          <span class="sponsor-names">Ka Reden Caisido<br>&amp; Ka Merlyn Alvaro</span>
         </div>
       </div>
     </div>
@@ -3003,14 +2986,14 @@
         const ci = Math.floor(Math.random() * COLORS.length);
         this.color = COLORS[ci];
         this.highlightColor = HIGHLIGHT_COLORS[ci];
-        this.speed = 0.15 + Math.random() * 0.2;
+        this.speed = 0.4 + Math.random() * 0.5;
         this.wobbleX = Math.random() * Math.PI * 2;
         this.wobbleY = Math.random() * Math.PI * 2;
-        this.wobbleSpeedX = 0.018 + Math.random() * 0.024;
-        this.wobbleSpeedY = 0.012 + Math.random() * 0.016;
+        this.wobbleSpeedX = 0.035 + Math.random() * 0.04;
+        this.wobbleSpeedY = 0.025 + Math.random() * 0.03;
         this.wobbleAmplX = 8 + Math.random() * 12;
         this.wobbleAmplY = 4 + Math.random() * 6;
-        this.flapSpeed = 0.028 + Math.random() * 0.018;
+        this.flapSpeed = 0.07 + Math.random() * 0.05;
         this.flapAngle = Math.random() * Math.PI * 2;
         this.opacity = 0.90 + Math.random() * 0.10;
         this.baseX = this.x;
@@ -3104,7 +3087,7 @@
       }
     }
 
-    const butterflies = Array.from({ length: 18 }, () => new Butterfly());
+    const butterflies = Array.from({ length: 30 }, () => new Butterfly());
 
     function animate() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
