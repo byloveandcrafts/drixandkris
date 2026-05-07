@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hendrix & Krisline | June 26, 2026</title>
   <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Great+Vibes&family=Montserrat:wght@300;400;500&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Great+Vibes&family=Montserrat:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
     rel="stylesheet">
   <style>
     :root {
@@ -92,6 +92,12 @@
     }
     #rsvp {
       background: linear-gradient(160deg, rgba(255,240,243,0.65) 0%, rgba(252,228,236,0.65) 40%, rgba(248,215,227,0.65) 70%, rgba(245,198,213,0.65) 100%) !important;
+    }
+    #hashtag {
+      background: linear-gradient(160deg, rgba(255,250,248,0.65) 0%, rgba(254,240,244,0.65) 100%) !important;
+    }
+    #seat-finder {
+      background: linear-gradient(135deg, rgba(252,228,236,0.65) 0%, rgba(255,240,243,0.65) 100%) !important;
     }
 
     /* ── NAV ── */
@@ -195,11 +201,16 @@
       }
 
       .nav-logo {
-        font-family: 'Great Vibes', cursive;
-        font-size: 22px;
+        font-family: 'Playfair Display', serif;
+        font-size: 13px;
+        font-weight: 600;
         color: var(--old-rose);
-        letter-spacing: 1px;
+        letter-spacing: 0.5px;
         text-transform: none;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: calc(100vw - 80px);
       }
 
       .nav-hamburger {
@@ -1568,6 +1579,202 @@
         padding: 32px 20px;
       }
     }
+
+    /* ── WEDDING HASHTAG SECTION ── */
+    #hashtag {
+      background: linear-gradient(160deg, rgba(255,250,248,0.65) 0%, rgba(254,240,244,0.65) 100%);
+      text-align: center;
+    }
+
+    .hashtag-card {
+      max-width: 620px;
+      margin: 0 auto;
+      background: rgba(255,250,252,0.72);
+      border: 1px solid rgba(176,112,128,0.2);
+      border-radius: 20px;
+      padding: 48px 40px;
+      box-shadow: 0 12px 50px rgba(176,112,128,0.14);
+      backdrop-filter: blur(6px);
+    }
+
+    .hashtag-butterfly {
+      font-size: 36px;
+      margin-bottom: 16px;
+      display: block;
+      animation: floatEmoji 3s ease-in-out infinite;
+    }
+
+    @keyframes floatEmoji {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    .hashtag-caption {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 16px;
+      color: var(--gray-dark);
+      margin-bottom: 28px;
+      line-height: 1.7;
+    }
+
+    .hashtag-display {
+      background: linear-gradient(135deg, #f8d7e3 0%, #fce4ec 100%);
+      border: 1.5px dashed rgba(176,112,128,0.4);
+      border-radius: 12px;
+      padding: 20px 28px;
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    .hashtag-text {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(18px, 4vw, 28px);
+      font-weight: 600;
+      color: var(--old-rose);
+      letter-spacing: 0.5px;
+      word-break: break-all;
+    }
+
+    .hashtag-sub {
+      font-size: 11px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--gray);
+      margin-bottom: 24px;
+    }
+
+    .hashtag-platforms {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .hashtag-platform {
+      background: rgba(255,255,255,0.7);
+      border: 1px solid rgba(176,112,128,0.2);
+      border-radius: 50px;
+      padding: 7px 18px;
+      font-size: 12px;
+      letter-spacing: 1px;
+      color: var(--text);
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    @media(max-width:600px) {
+      .hashtag-card { padding: 36px 20px; }
+      .hashtag-text { font-size: clamp(20px, 7vw, 30px); }
+    }
+
+    /* ── SEAT FINDER SECTION ── */
+    #seat-finder {
+      background: linear-gradient(135deg, rgba(252,228,236,0.65) 0%, rgba(255,240,243,0.65) 100%);
+      text-align: center;
+    }
+
+    .seat-finder-note {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 17px;
+      color: var(--gray-dark);
+      margin-bottom: 36px;
+    }
+
+    .seat-qr-card {
+      max-width: 580px;
+      margin: 0 auto;
+      background: rgba(255,250,252,0.78);
+      border: 1px solid rgba(176,112,128,0.2);
+      border-radius: 24px;
+      padding: 44px 40px;
+      box-shadow: 0 12px 50px rgba(176,112,128,0.14);
+      backdrop-filter: blur(6px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .seat-qr-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+    }
+
+    #seat-qr-code {
+      background: white;
+      border: 2px solid rgba(176,112,128,0.18);
+      border-radius: 16px;
+      padding: 16px;
+      box-shadow: 0 6px 28px rgba(176,112,128,0.12);
+    }
+
+    #seat-qr-code canvas,
+    #seat-qr-code img {
+      display: block;
+      border-radius: 8px;
+    }
+
+    .seat-qr-label {
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gray);
+    }
+
+    .seat-qr-divider {
+      width: 80px;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--blush), transparent);
+    }
+
+    .seat-qr-info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .seat-qr-butterfly {
+      font-size: 28px;
+      animation: floatEmoji 3s ease-in-out infinite;
+    }
+
+    .seat-qr-desc {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 15px;
+      color: var(--gray-dark);
+      max-width: 340px;
+      line-height: 1.6;
+    }
+
+    .seat-open-btn {
+      display: inline-block;
+      padding: 14px 36px;
+      background: linear-gradient(135deg, var(--blush), var(--old-rose));
+      color: white;
+      text-decoration: none;
+      border-radius: 50px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
+      box-shadow: 0 6px 22px rgba(176,112,128,0.28);
+    }
+
+    .seat-open-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(176,112,128,0.38);
+      opacity: 0.92;
+    }
+
+    @media(max-width:600px) {
+      .seat-qr-card { padding: 32px 20px; }
+    }
   </style>
 </head>
 
@@ -2252,6 +2459,7 @@
       <a href="#dresscode" class="nav-link-item">Dress Code</a>
       <a href="#entourage" class="nav-link-item">Entourage</a>
       <a href="#rsvp" class="nav-link-item">RSVP</a>
+      <a href="#seat-finder" class="nav-link-item">Seats</a>
     </div>
     <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
       <svg viewBox="0 0 48 40" xmlns="http://www.w3.org/2000/svg" fill="none">
@@ -2520,7 +2728,7 @@
             <div class="venue-body-top">
               <h3 class="venue-name">The Ceremony</h3>
               <p class="venue-address">
-                Iglesia ni Cristo lokal ng Pasong Langka<br>
+                <strong>IGLESIA NI CRISTO LOKAL NG PASONG LANGKA</strong><br>
                 Purok 3, Barangay Pasong Langka, Silang, Cavite
               </p>
               <div class="venue-meta-row">
@@ -2534,7 +2742,7 @@
                 </div>
                 <div class="venue-meta-item">
                   <p class="venue-meta-label">Attire</p>
-                  <p class="venue-meta-value">Semi Formal</p>
+                  <p class="venue-meta-value">Semi Formal / Church Dress</p>
                 </div>
               </div>
             </div>
@@ -2554,16 +2762,14 @@
         <div class="venue-card">
           <div class="venue-card-side">
             <span class="venue-side-num">02</span>
-            <span class="venue-side-label">The Reception</span>
-            <span class="venue-side-type">Dinner & Celebration</span>
+            <span class="venue-side-type">The Reception</span>
           </div>
           <div class="venue-card-body">
             <div class="venue-body-top">
-              <p class="venue-label-row">The Reception</p>
-              <h3 class="venue-name">Grandeur Palace Co.</h3>
+              <h3 class="venue-name">The Reception</h3>
               <p class="venue-address">
-                Tagaytay-Sta. Rosa Road<br>
-                Purok 3 Lumil, Silang, Cavite
+                <strong>GRANDEUR PALACE CO.</strong><br>
+                Tagaytay-Sta. Rosa Road Purok 3 Lumil, Silang, Cavite
               </p>
               <div class="venue-meta-row">
                 <div class="venue-meta-item">
@@ -2576,7 +2782,7 @@
                 </div>
                 <div class="venue-meta-item">
                   <p class="venue-meta-label">Attire</p>
-                  <p class="venue-meta-value">Semi Formal</p>
+                  <p class="venue-meta-value">Semi Formal / Church Dress</p>
                 </div>
               </div>
             </div>
@@ -2667,7 +2873,6 @@
   <!-- Dress Code -->
   <section id="dresscode">
     <div class="section-inner fade-in">
-      <p class="section-label">Come Dressed In</p>
       <h2 class="section-title">Dress Code</h2>
       <div class="section-divider"></div>
 
@@ -2699,9 +2904,8 @@
         <div class="dresscode-inner-divider"></div>
 
         <p class="dresscode-note">
-          On June 26, 2026, we would love to see you in<br>
+          Please follow the above DRESS CODE & COLOR, but we would LOVE to see you wearing<br>
           <strong style="font-size:24px; color:var(--old-rose); font-style:normal;">PINK</strong><br>
-          <span style="font-size:16px; color:var(--gray);">Simple, Elegant in Pink</span>
         </p>
 
         <p class="dresscode-footer-ornament">✦ &nbsp; · &nbsp; ✦</p>
@@ -2865,13 +3069,29 @@
     </p>
   </div>
 
+  <!-- Wedding Hashtag -->
+  <section id="hashtag">
+    <div class="section-inner fade-in">
+      <p class="section-label">Share the Love</p>
+      <h2 class="section-title">Our Hashtag</h2>
+      <div class="section-divider"></div>
+      <div class="hashtag-card">
+        <p class="hashtag-caption">Use our hashtag when sharing your photos taken from the reception so we can see all the beautiful memories you capture!</p>
+        <div class="hashtag-display">
+          <span class="hashtag-text">#KayDRIXnakalaansiKRIS</span>
+        </div>
+        <p class="hashtag-sub">Tag your posts &nbsp;·&nbsp; Share the joy &nbsp;·&nbsp; Be part of our story</p>
+      </div>
+    </div>
+  </section>
+
   <!-- RSVP -->
   <section id="rsvp">
     <div class="section-inner fade-in">
       <p class="section-label">We Can't Wait!</p>
       <h2 class="section-title">RSVP</h2>
       <div class="section-divider"></div>
-      <p class="rsvp-note">Kindly confirm your attendance by June 19, 2026</p>
+      <p class="rsvp-note">Kindly confirm your attendance by June 12, 2026</p>
 
       <div class="rsvp-form-wrapper">
         <!-- 
@@ -2890,6 +3110,31 @@
       <p style="text-align:center;font-size:12px;color:var(--gray);margin-top:16px;font-style:italic;">
         Replace the Google Form URL above with your actual form link.
       </p>
+    </div>
+  </section>
+
+  <!-- Seat Finder -->
+  <section id="seat-finder">
+    <div class="section-inner fade-in">
+      <p class="section-label">Find Your Place</p>
+      <h2 class="section-title">Seat Finder</h2>
+      <div class="section-divider"></div>
+      <p class="seat-finder-note">Scan the QR code below to find your assigned seat for the reception.</p>
+
+      <div class="seat-qr-card">
+        <div class="seat-qr-wrap">
+          <div id="seat-qr-code"></div>
+          <p class="seat-qr-label">Point your camera here</p>
+        </div>
+        <div class="seat-qr-divider"></div>
+        <div class="seat-qr-info">
+          <p class="seat-qr-desc">Can't scan? Tap the button below to open the seat finder directly.</p>
+          <!-- ✏️ PASTE YOUR SEAT FINDER URL below in the href -->
+          <a id="seat-finder-link" href="YOUR_SEAT_FINDER_URL_HERE" target="_blank" rel="noopener" class="seat-open-btn">
+            Open Seat Finder
+          </a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -3107,8 +3352,36 @@
       butterflies.forEach(b => { b.update(); b.draw(); });
       requestAnimationFrame(animate);
     }
+    // ── SEAT FINDER QR CODE ──
+    // ✏️ PASTE YOUR SEAT FINDER URL HERE:
+    const SEAT_FINDER_URL = 'YOUR_SEAT_FINDER_URL_HERE';
+
+    function generateSeatQR() {
+      const link = document.getElementById('seat-finder-link');
+      if (link && SEAT_FINDER_URL !== 'YOUR_SEAT_FINDER_URL_HERE') {
+        link.href = SEAT_FINDER_URL;
+      }
+
+      const container = document.getElementById('seat-qr-code');
+      if (!container || typeof QRCode === 'undefined') return;
+
+      const url = SEAT_FINDER_URL !== 'YOUR_SEAT_FINDER_URL_HERE'
+        ? SEAT_FINDER_URL
+        : 'https://example.com/seat-finder';
+
+      new QRCode(container, {
+        text: url,
+        width: 200,
+        height: 200,
+        colorDark: '#7a4055',
+        colorLight: '#fffaf8',
+        correctLevel: QRCode.CorrectLevel.H
+      });
+    }
+
     animate();
   </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" onload="generateSeatQR()"></script>
 </body>
 
 </html>
