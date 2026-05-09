@@ -511,7 +511,7 @@
     .pb-petal { position:absolute; font-size:18px; animation:petalFall linear infinite; opacity:0.5; }
     @keyframes petalFall { 0%{transform:translateY(-30px) rotate(0deg);opacity:0.6;}100%{transform:translateY(110vh) rotate(360deg);opacity:0;} }
     .pb-scene { display:flex; flex-direction:column; align-items:center; gap:28px; perspective:1200px; }
-    .pb-card { width:320px; height:400px; position:relative; transform-style:preserve-3d; cursor:pointer; }
+    .pb-card { width:320px; height:400px; position:relative; transform-style:preserve-3d; cursor:pointer; -webkit-tap-highlight-color: transparent; -webkit-touch-callout: none; user-select: none; }
     .pb-cover { position:absolute; inset:0; transform-style:preserve-3d; transform-origin:left center; transition:transform 1.4s cubic-bezier(0.4,0,0.2,1); z-index:10; }
     .pb-cover.open { transform:rotateY(-175deg); }
     .pb-cover-front,.pb-cover-back { position:absolute; inset:0; border-radius:6px 18px 18px 6px; backface-visibility:hidden; }
@@ -736,7 +736,6 @@
           <div class="venue-card-side"><span class="venue-side-num">01</span><span class="venue-side-type">The Ceremony</span></div>
           <div class="venue-card-body">
             <div class="venue-body-top">
-              <h3 class="venue-name">The Ceremony</h3>
               <p class="venue-address"><strong>IGLESIA NI CRISTO LOKAL NG PASONG LANGKA</strong><br>Purok 3, Barangay Pasong Langka, Silang, Cavite</p>
               <div class="venue-meta-row">
                 <div class="venue-meta-item"><p class="venue-meta-label">Date</p><p class="venue-meta-value">26 June 2026</p></div>
@@ -754,7 +753,6 @@
           <div class="venue-card-side"><span class="venue-side-num">02</span><span class="venue-side-type">The Reception</span></div>
           <div class="venue-card-body">
             <div class="venue-body-top">
-              <h3 class="venue-name">The Reception</h3>
               <p class="venue-address"><strong>GRANDEUR PALACE CO.</strong><br>Tagaytay-Sta. Rosa Road Purok 3 Lumil, Silang, Cavite</p>
               <div class="venue-meta-row">
                 <div class="venue-meta-item"><p class="venue-meta-label">Date</p><p class="venue-meta-value">26 June 2026</p></div>
@@ -807,7 +805,7 @@
           <div class="color-swatch"><div class="swatch-circle" style="background:#FCDCE9;"></div><span class="swatch-label">Lavender Blush</span></div>
         </div>
         <div class="dresscode-inner-divider"></div>
-        <p class="dresscode-note">Please follow the above DRESS CODE &amp; COLOR, but we would LOVE to see you wearing any shades of<br><strong style="font-size:24px;color:var(--old-rose);font-style:normal;">PINK</strong></p>
+        <p class="dresscode-note">As this is our SPECIAL DAY, we kindly encourage our FAVORITE PEOPLE to dress in the ABOVE COLOR PALETTE. We would LOVE to see you wearing any shades of<br><strong style="font-size:24px;color:var(--old-rose);font-style:normal;">PINK</strong></p>
         <p class="dresscode-footer-ornament">✦ &nbsp; · &nbsp; ✦</p>
       </div>
     </div>
@@ -920,7 +918,7 @@
       <div class="rsvp-btn-card">
         <p class="rsvp-btn-ornament">✦ &nbsp; ✦ &nbsp; ✦</p>
         <p class="rsvp-btn-desc">We'd love to know you're coming! Please click the button below to confirm your attendance.</p>
-        <a class="rsvp-main-btn" href="https://pinkrisrsvp.loveandcrafts.online/" target="_blank" rel="noopener">
+        <a class="rsvp-main-btn" href="https://byloveandcrafts.github.io/PINKRISRSVP/" target="_blank" rel="noopener">
           Confirm Attendance &nbsp;→
         </a>
         <p class="rsvp-btn-footer">Opens in a new tab</p>
